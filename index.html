@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiempo en la Relación</title>
+    <style>
+        body {
+            background-color: #FAD6D1; 
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 600px;
+        }
+
+        .time {
+            font-size: 2em;
+            margin: 20px 0;
+            color: #E74C3C;
+        }
+
+        .image-container {
+            margin: 20px 0;
+        }
+
+        .image-container img {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 10px;
+        }
+
+        .message {
+            font-size: 1.2em;
+            color: #333;
+            margin-top: 20px;
+        }
+
+        .image-placeholder {
+            background-color: #EEE;
+            width: 100%;
+            max-width: 300px;
+            height: 200px;
+            border-radius: 10px;
+            margin: 20px auto;
+            line-height: 200px;
+            text-align: center;
+            color: #AAA;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="image-container">
+            <!-- Inserta tu imagen aquí -->
+            <img src="https://subir-imagen.com/images/2024/12/18/photo_2024-11-28_10-41-13.jpeg" alt="Imagen de la relación">
+            
+        </div>
+
+        <div class="time" id="timeDisplay">
+           
+        </div>
+
+        <div class="message">
+            <p>Sabes lo mucho que yo te amo, y apesar de que me lleve mucho tiempo el tratar de hacer aglo bonito, yo soy capaz de sacrificarme.
+          TE AMO MAPACHITO QUIERO ESTAR JUNTO A TI POR SIEMPRE❤️</p>
+            
+        </div>
+    </div>
+
+    <script>
+        
+        const startDate = new Date('2024-05-25T00:00:00'); 
+        
+        function updateTime() {
+            const now = new Date();
+            const diff = now - startDate; // 
+
+            const seconds = Math.floor(diff / 1000) % 60;
+            const minutes = Math.floor(diff / (1000 * 60)) % 60;
+            const hours = Math.floor(diff / (1000 * 60 * 60)) % 24;
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+
+            const timeString = `${days} días, ${hours} horas, ${minutes} minutos, ${seconds} segundos`;
+            document.getElementById('timeDisplay').textContent = timeString;
+        }
+
+
+        setInterval(updateTime, 1000);
+
+        
+        updateTime();
+    </script>
+
+</body>
+</html>
